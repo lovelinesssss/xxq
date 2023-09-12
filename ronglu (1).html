@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>拖放游戏</title>
+    <style>
+        body {
+            background-image: url('res/ti/bg2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        #images {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #smelter {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+
+        #smelterImg {
+            width: 400px;
+            height: 400px;
+        }
+
+        #next-btn {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>请把正确的物品拖进熔炉</h1>
+    </div>
+
+    <div id="images">
+        <img id="kun" class=".img2" src="res/ti/kun.jpg" draggable="true">
+        <img id="monkey" class='.img2' src="res/ti/monkey.jpg" draggable="true">
+        <img id="iron" class='.img2' src="res/ti/iron.png" draggable="true">
+        <img id="deadbody" class='.img2' src="res/ti/deadbody.jpg" draggable="true">
+    </div>
+
+    <div id="smelter">
+        <img id="smelterImg" src="res/ti/smelter.jpg">
+    </div>
+    <button id="next-btn" style="display:none;">前往测验之路</button>
+    <script>
+        let dragged;
+
+        document.addEventListener("dragstart", function (event) {
+            dragged = event.target;
+        });
+
+        document.getElementById("smelterImg").addEventListener("dragover", function (event) {
+            event.preventDefault();
+        });
+
+        document.getElementById("smelterImg").addEventListener("drop", function (event) {
+            event.preventDefault();
+            if (dragged.id === "iron") {
+                alert("回答正确!");
+                document.getElementById("next-btn").style.display = "block";
+
+                document.getElementById("next-btn").addEventListener("click", function () {
+                    window.location.href = "timu.html";
+                });
+            } else if (dragged.id === "kun") {
+                alert("你干嘛~？哎呦~~~");
+            }
+            else if (dragged.id === "monkey") {
+                alert("你在给俺老孙练火眼金睛呢！");
+            }
+            else if (dragged.id === "deadbody") {
+                alert("快住手，任何违法行为，都将被绳之以法！");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
