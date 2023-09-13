@@ -6,14 +6,12 @@
 
     <style>
         body {
-            background-image: url('res/gm/bg3.jpg');
+            background-image: url('bg3.png');
             background-size: cover;
-            background-repeat: repeat;
-            background-position: center;
         }
 
         img {
-            width: 100px;
+            width: 400px;
             position: absolute;
         }
 
@@ -33,17 +31,13 @@
         }
 
         #img4 {
-            top: 400px;
+            top: 800px;
             right: 200px;
         }
 
-        #img5 {
-            bottom: 100px;
-            right: 100px;
-        }
-
         p {
-            color: green;
+            color: blue;
+            font-size: 50px;
         }
     </style>
 
@@ -51,17 +45,15 @@
 
 <body>
 
-    <img id="img1" src="res/gm/01.png" onmouseover="showText1()">
+    <img id="img1" src="01.png" onmouseover="showText1()">
 
-    <img id="img2" src="res/gm/02.png" onmouseover="showText2()">
+    <img id="img2" src="02.png" onmouseover="showText2()">
 
-    <img id="img3" src="res/gm/03.png" onmouseover="showText3()">
+    <img id="img3" src="03.png" onmouseover="showText3()">
 
-    <img id="img4" src="res/gm/04.png" onmouseover="showText4()">
+    <img id="img4" src="04.png" onmouseover="showText4()">
 
-    <img id="img5" src="res/gm/05.png" onmouseover="showText5()">
-
-    <h1 style="color:red; text-align:center;">请你来解谜</h1>
+    <h1 style="color:white; text-align:center;font-size: 100px;">请你来解谜</h1>
 
     <div style="text-align:center">
 
@@ -70,33 +62,32 @@
         <p id="result"></p>
 
         <button onclick="checkAnswer()">提交</button>
+        <a href="index.html">
+            <button>返回首页</button>
+        </a>
 
 
         <script>
             function showText1() {
-                document.getElementById("result").innerHTML = "1.制作打铁花的花枝:用铁丝弯曲成想要的花卉形状,可以使用铁钳进行弯曲,需要逐渐调整弯曲度。";
+                document.getElementById("result").innerHTML = "1.架花棚。";
             }
 
             function showText2() {
-                document.getElementById("result").innerHTML = "2.制作打铁花的花瓣:将铁丝用铁钳弯成锯齿状,然后逐渐调整锯齿的大小,形成花瓣形状。";
+                document.getElementById("result").innerHTML = "2.制作花棒。";
             }
 
             function showText3() {
-                document.getElementById("result").innerHTML = "3.准备工具和材料:廊销需要准吐粒备铁丝、铁钳、钢笔等工具和瓶子、石头伐冷财等固定工具。";
+                document.getElementById("result").innerHTML = "3.把铁块烧成铁水。";
             }
 
             function showText4() {
-                document.getElementById("result").innerHTML = "4.组装打铁花:将花枝和花瓣逐个组装在一起,需要在每个花瓣和花枝之间用钢笔或其他工具拧紧铁丝。";
-            }
-
-            function showText5() {
-                document.getElementById("result").innerHTML = "5.打磨和上色:可以使用打磨机进行打磨,使花卉表面更加光滑。然后可以使用颜料或喷漆等材料进行上色。";
+                document.getElementById("result").innerHTML = "4.击打花棒，铁水在空中散开。";
             }
 
             function checkAnswer() {
                 var input = document.getElementById("answer").value;
-                if (input == "31245") {
-                    window.location.href = "timu.html";
+                if (input == "1324") {
+                    window.location.href = "ronglu.html";
                 } else {
                     document.getElementById("result").innerHTML = "回答错误!";
                 }
